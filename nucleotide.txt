@@ -5,7 +5,7 @@
 #  (name of sequence) \t (aligned sequence)
 ##  TableS2.txt: human, TableS3.txt: lion, TableS4.txt: bacteria
 
- sites <- read.table(file="TableS3.txt", header=F, sep="\t")
+ sites <- read.table(file="TableS4.txt", header=F, sep="\t")
  sites<-as.matrix(sites)
  dim(sites)
 
