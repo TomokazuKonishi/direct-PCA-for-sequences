@@ -21,11 +21,11 @@ bool <- array(0, dim=c(n_sample, 21*n_seq))
 
 
 colnames(bool) <- c(paste("A_", 1:n_seq, sep=""),paste("C_", 1:n_seq, sep=""),paste("D_", 1:n_seq, sep=""),paste("E_", 1:n_seq, sep=""),paste("F_", 1:n_seq, sep=""),paste("G_", 1:n_seq, sep=""),paste("H_", 1:n_seq, sep=""),paste("I_", 1:n_seq, sep=""),paste("K_", 1:n_seq, sep=""),paste("L_", 1:n_seq, sep=""),paste("M_", 1:n_seq, sep=""),paste("N_", 1:n_seq, sep=""),paste("P_", 1:n_seq, sep=""),paste("Q_", 1:n_seq, sep=""),paste("R_", 1:n_seq, sep=""),paste("S_", 1:n_seq, sep=""),paste("T_", 1:n_seq, sep=""),paste("V_", 1:n_seq, sep=""),paste("W_", 1:n_seq, sep=""),paste("Y_", 1:n_seq, sep=""),paste("-_", 1:n_seq, sep=""))
-rownames(bool) <- HA[,1]
+rownames(bool) <- sites[,1]
 
 
   for (s in 1:n_sample){
-     se <- HA[s, 2]
+     se <- sites[s, 2]
      se <- tolower(se)
 
 #
