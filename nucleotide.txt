@@ -113,3 +113,16 @@
 	  par(lwd=4, mex=0.6, mai=c(4,4,3,0.2))
 	  plot(1:20, (res_svd$d/sum(res_svd$d)*100)[1:20], pch=1, type="b",  lty=3, ylab="(%)", xlab="PC", main="Contribution", col="gray50")
 	dev.off()
+
+# contribution tangent regression 
+
+	theta  <- ((length(res_svd$d)+1):1-1)/(length(res_svd$d)+1)*(0.5*pi)
+	tans <- tan(theta)
+
+	png(width=2100, height=2300, pointsize = 80, file="tangent.png")
+	  par(lwd=4, mex=0.6, mai=c(4,4,3,0.2))
+	 plot((tans), c( res_svd$d, 0)/sum(res_svd$d)*100, xlab="Tangent", ylab="Contribution (%)")
+		#abline(0, sum(res_svd$d)/sum(tans)/sum(res_svd$d)*100, lty=3)
+	     z <- line ((res_svd$d/sum(res_svd$d)*100 )[1:10] ~ (tans )[1:10]  )
+		abline(coef(z), lty=3)
+	dev.off()
